@@ -1,199 +1,598 @@
-body{
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LAW AND POLITICS</title>
+
+<style>
+
+*{
 margin:0;
-font-family:"Poppins","Arial",sans-serif;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+height:100vh;
+
+overflow:hidden;
+
+font-family:Arial,"Noto Sans Thai",sans-serif;
+
+background:
+
+radial-gradient(
+circle at center,
+rgba(255,255,255,.35),
+transparent 18%
+),
+
+linear-gradient(
+120deg,
+#10001f,
+#3b0764,
+#6b21a8,
+#140021
+);
+
 color:white;
 
-background:
-radial-gradient(circle at 20% 20%, #b517ff55, transparent 30%),
-radial-gradient(circle at 80% 40%, #7209b755, transparent 35%),
-linear-gradient(
-135deg,
-#100018,
-#240046,
-#3c096c,
-#100018
-);
-
-overflow-x:hidden;
 }
 
 
-/* แสงลอย */
-body::before{
+
+
+/* แสงกลาง */
+
+body:before{
 
 content:"";
 
-position:fixed;
+position:absolute;
 
-width:700px;
-height:700px;
+width:600px;
+height:600px;
+
+left:45%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+background:white;
+
+opacity:.12;
+
+filter:blur(130px);
+
+}
+
+
+
+
+/* ควัน */
+
+body:after{
+
+content:"";
+
+position:absolute;
+
+bottom:-80px;
+
+left:-80px;
+
+width:450px;
+
+height:250px;
 
 background:
+
 radial-gradient(
 circle,
-#c77dff,
-transparent 65%
+rgba(255,255,255,.25),
+transparent 70%
 );
 
-filter:blur(80px);
-
-top:-200px;
-left:50%;
-
-transform:translateX(-50%);
-
-opacity:.35;
-
-animation:moveLight 8s infinite alternate;
-
-}
-
-
-@keyframes moveLight{
-
-from{
-transform:translateX(-60%);
-}
-
-to{
-transform:translateX(-40%);
-}
+filter:blur(50px);
 
 }
 
 
 
-/* ลายตกแต่ง */
-body::after{
+.banner{
 
-content:"";
+height:100vh;
 
-position:fixed;
+display:grid;
 
-inset:0;
+grid-template-columns:60% 40%;
 
-background-image:
+position:relative;
 
-linear-gradient(
-45deg,
-transparent 48%,
-rgba(255,215,0,.08) 49%,
-transparent 50%
-);
-
-background-size:80px 80px;
-
-opacity:.25;
-
-pointer-events:none;
+z-index:2;
 
 }
 
 
 
-/* กล่องกระจก */
-
-.card{
-
-background:
-
-linear-gradient(
-135deg,
-rgba(255,255,255,.18),
-rgba(255,255,255,.05)
-);
-
-border:
-
-1px solid rgba(255,215,0,.5);
 
 
-box-shadow:
+/* LEFT */
 
-0 30px 80px rgba(0,0,0,.6),
-inset 0 0 40px rgba(255,255,255,.05);
+.left{
 
+padding-left:90px;
 
-backdrop-filter:blur(20px);
+display:flex;
 
+flex-direction:column;
+
+justify-content:center;
 
 }
 
 
 
-/* หัวข้อ */
+.main-title{
 
-h1{
-
-font-size:90px;
+font-size:105px;
 
 font-weight:900;
 
-letter-spacing:15px;
+letter-spacing:6px;
 
+line-height:.85;
 
-background:
+text-shadow:
 
-linear-gradient(
-180deg,
-#ffffff,
-#ffd166,
-#b8860b
-);
-
-
--webkit-background-clip:text;
-
-color:transparent;
-
-
-filter:
-
-drop-shadow(
-0 0 25px #ffd166
-);
-
+0 0 25px rgba(255,255,255,.25);
 
 }
 
 
 
-/* ปุ่ม */
+.main-title span{
+
+color:#f8fafc;
+
+}
+
+
+
+
+.smile{
+
+position:relative;
+
+display:inline-block;
+
+}
+
+
+
+.smile:before,
+.smile:after{
+
+content:"";
+
+position:absolute;
+
+background:white;
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+top:38px;
+
+}
+
+
+.smile:before{
+
+left:28px;
+
+}
+
+
+.smile:after{
+
+right:28px;
+
+}
+
+
+.smile i{
+
+position:absolute;
+
+width:45px;
+
+height:20px;
+
+border-bottom:5px solid white;
+
+border-radius:50%;
+
+left:15px;
+
+bottom:25px;
+
+}
+
+
+
+
+.line{
+
+width:280px;
+
+height:3px;
+
+background:#d4af37;
+
+margin:40px 0;
+
+}
+
+
+
+.detail{
+
+font-size:24px;
+
+line-height:1.8;
+
+}
+
+
+
+.detail strong{
+
+font-size:36px;
+
+}
+
+
+
+
+/* RIGHT */
+
+
+.right{
+
+position:relative;
+
+border-left:
+
+1px solid rgba(212,175,55,.4);
+
+}
+
+
+
+
+.logos{
+
+position:absolute;
+
+right:45px;
+
+top:45px;
+
+display:flex;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+width:75px;
+
+height:75px;
+
+border-radius:50%;
+
+border:3px solid #d4af37;
+
+background:rgba(255,255,255,.15);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#ffd166;
+
+font-size:12px;
+
+}
+
+
+
+
+
+/* ครู */
+
+
+.teachers{
+
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+.teacher{
+
+height:620px;
+
+filter:
+
+drop-shadow(0 0 35px rgba(0,0,0,.8));
+
+margin-left:-80px;
+
+}
+
+
+
+
+
+/* social */
+
+
+.social{
+
+position:absolute;
+
+bottom:50px;
+
+right:50px;
+
+}
+
+
+
+.small{
+
+color:#ccc;
+
+font-size:14px;
+
+}
+
+
 
 .social a{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+background:white;
+
+color:#333;
+
+padding:12px 25px;
+
+border-radius:18px;
+
+margin-top:8px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+.ig{
+
+width:42px;
+
+height:42px;
+
+border-radius:12px;
 
 background:
 
 linear-gradient(
 135deg,
-#5a189a,
-#240046
+#ffd600,
+#ff7a00,
+#e1306c,
+#833ab4
 );
 
-
-box-shadow:
-
-0 15px 30px rgba(0,0,0,.5);
+}
 
 
-border:
 
-1px solid #ffd166;
+.fb{
 
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#1877f2;
+
+color:white;
+
+font-size:32px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:bold;
 
 }
 
 
-.social a:hover{
-
-transform:
-
-translateY(-15px)
-rotateX(10deg);
 
 
-box-shadow:
 
-0 0 50px #ffd166;
+</style>
 
-}
+</head>
+
+
+
+<body>
+
+
+<div class="banner">
+
+
+
+<div class="left">
+
+
+<div class="main-title">
+
+LAW<br>
+
+AND<br>
+
+POL<span class="smile">
+
+O
+
+<i></i>
+
+</span>TICS
+
+
+</div>
+
+
+<div class="line"></div>
+
+
+<div class="detail">
+
+แผนการเรียนวิทยาศาสตร์ - คณิตศาสตร์
+
+<br>
+
+<strong>
+ห้องเรียนนิติ-รัฐศาสตร์
+</strong>
+
+<br>
+
+(LAW AND POLITICS CLASSROOM)
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="right">
+
+
+<div class="logos">
+
+<div class="logo">SCHOOL</div>
+
+<div class="logo">SOCIAL</div>
+
+<div class="logo">LP</div>
+
+</div>
+
+
+
+
+<div class="teachers">
+
+
+<img class="teacher" src="teacher1.png">
+
+<img class="teacher" src="teacher2.png">
+
+
+</div>
+
+
+
+
+<div class="social">
+
+
+<div class="small">
+คลิกเลย!
+</div>
+
+
+<a href="https://www.instagram.com/404lp.gen1?igsh=NnRleG04ZTV0aXcx">
+
+<div class="ig"></div>
+
+404lp.gen1
+
+</a>
+
+
+<div class="small">
+คลิกเลย!
+</div>
+
+
+<a href="https://www.facebook.com/share/1BcdQeC7fJ/?mibextid=wwXIfr">
+
+<div class="fb">
+
+f
+
+</div>
+
+สังคมศึกษา ศ.ส.ว
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</body>
+</html>
