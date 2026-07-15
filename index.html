@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LAW AND POLITICS</title>
+<title>LAW AND POLITICS CLASSROOM</title>
+
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
 body{
 
-height:100vh;
+    height:100vh;
 
-overflow:hidden;
+    overflow:hidden;
 
-font-family:Arial,"Noto Sans Thai",sans-serif;
+    font-family:"Arial",sans-serif;
 
-background:
+    color:white;
 
-radial-gradient(
-circle at center,
-rgba(255,255,255,.35),
-transparent 18%
-),
 
-linear-gradient(
-120deg,
-#10001f,
-#3b0764,
-#6b21a8,
-#140021
-);
+    background:
 
-color:white;
+    radial-gradient(
+    circle at 50% 40%,
+    rgba(255,255,255,.35),
+    transparent 18%
+    ),
+
+    linear-gradient(
+    135deg,
+    #12001f,
+    #3c096c,
+    #240046,
+    #0b0014
+    );
 
 }
 
 
-
-
 /* แสงกลาง */
 
-body:before{
+body::before{
 
 content:"";
 
 position:absolute;
 
-width:600px;
-height:600px;
+width:650px;
+height:650px;
 
-left:45%;
-top:50%;
+left:50%;
+top:45%;
 
 transform:translate(-50%,-50%);
 
@@ -67,28 +68,25 @@ background:white;
 
 opacity:.12;
 
-filter:blur(130px);
+filter:blur(120px);
 
 }
 
 
 
-
 /* ควัน */
 
-body:after{
+body::after{
 
 content:"";
 
 position:absolute;
 
-bottom:-80px;
-
-left:-80px;
+bottom:-120px;
+left:-100px;
 
 width:450px;
-
-height:250px;
+height:300px;
 
 background:
 
@@ -98,9 +96,10 @@ rgba(255,255,255,.25),
 transparent 70%
 );
 
-filter:blur(50px);
+filter:blur(60px);
 
 }
+
 
 
 
@@ -120,9 +119,7 @@ z-index:2;
 
 
 
-
-
-/* LEFT */
+/* ฝั่งซ้าย */
 
 .left{
 
@@ -130,123 +127,65 @@ padding-left:90px;
 
 display:flex;
 
-flex-direction:column;
-
 justify-content:center;
+
+flex-direction:column;
 
 }
 
 
 
-.main-title{
+.title{
 
-font-size:105px;
+font-size:90px;
 
 font-weight:900;
 
-letter-spacing:6px;
-
 line-height:.85;
 
-text-shadow:
-
-0 0 25px rgba(255,255,255,.25);
-
-}
+letter-spacing:8px;
 
 
+background:
 
-.main-title span{
-
-color:#f8fafc;
-
-}
-
-
-
-
-.smile{
-
-position:relative;
-
-display:inline-block;
-
-}
+linear-gradient(
+180deg,
+white,
+#ffd166
+);
 
 
+-webkit-background-clip:text;
 
-.smile:before,
-.smile:after{
+color:transparent;
 
-content:"";
-
-position:absolute;
-
-background:white;
-
-width:10px;
-
-height:10px;
-
-border-radius:50%;
-
-top:38px;
-
-}
-
-
-.smile:before{
-
-left:28px;
-
-}
-
-
-.smile:after{
-
-right:28px;
-
-}
-
-
-.smile i{
-
-position:absolute;
-
-width:45px;
-
-height:20px;
-
-border-bottom:5px solid white;
-
-border-radius:50%;
-
-left:15px;
-
-bottom:25px;
+filter:drop-shadow(0 0 20px #ffd166);
 
 }
 
 
 
 
-.line{
+/* เส้นทอง */
 
-width:280px;
+.gold-line{
+
+width:300px;
 
 height:3px;
 
 background:#d4af37;
 
-margin:40px 0;
+margin:35px 0;
 
 }
 
 
 
+
 .detail{
 
-font-size:24px;
+font-size:22px;
 
 line-height:1.8;
 
@@ -256,66 +195,64 @@ line-height:1.8;
 
 .detail strong{
 
-font-size:36px;
+font-size:34px;
 
 }
 
 
 
 
-/* RIGHT */
-
+/* ฝั่งขวา */
 
 .right{
 
+border-left:1px solid rgba(255,215,0,.3);
+
 position:relative;
-
-border-left:
-
-1px solid rgba(212,175,55,.4);
 
 }
 
 
 
+
+/* โลโก้ */
 
 .logos{
 
 position:absolute;
 
-right:45px;
+right:35px;
 
-top:45px;
+top:35px;
 
 display:flex;
 
-gap:15px;
+gap:12px;
 
 }
 
 
-
 .logo{
 
-width:75px;
+width:70px;
 
-height:75px;
+height:70px;
 
 border-radius:50%;
 
 border:3px solid #d4af37;
 
-background:rgba(255,255,255,.15);
-
 display:flex;
-
-align-items:center;
 
 justify-content:center;
 
+align-items:center;
+
+font-size:11px;
+
 color:#ffd166;
 
-font-size:12px;
+background:rgba(255,255,255,.12);
 
 }
 
@@ -323,18 +260,19 @@ font-size:12px;
 
 
 
-/* ครู */
+/* รูปครู */
 
+.teacher-area{
 
-.teachers{
-
-height:100%;
+height:75%;
 
 display:flex;
 
+justify-content:center;
+
 align-items:center;
 
-justify-content:center;
+gap:0;
 
 }
 
@@ -342,13 +280,17 @@ justify-content:center;
 
 .teacher{
 
-height:620px;
+width:250px;
+
+height:500px;
+
+object-fit:cover;
+
+margin-left:-50px;
 
 filter:
 
-drop-shadow(0 0 35px rgba(0,0,0,.8));
-
-margin-left:-80px;
+drop-shadow(0 0 30px black);
 
 }
 
@@ -356,26 +298,24 @@ margin-left:-80px;
 
 
 
-/* social */
+/* Social */
 
 
 .social{
 
 position:absolute;
 
-bottom:50px;
+right:35px;
 
-right:50px;
+bottom:40px;
 
 }
 
 
 
-.small{
+.social small{
 
 color:#ccc;
-
-font-size:14px;
 
 }
 
@@ -389,11 +329,13 @@ align-items:center;
 
 gap:15px;
 
+width:260px;
+
 background:white;
 
 color:#333;
 
-padding:12px 25px;
+padding:12px 20px;
 
 border-radius:18px;
 
@@ -408,13 +350,15 @@ font-weight:bold;
 
 
 
+
 .ig{
 
-width:42px;
+width:40px;
 
-height:42px;
+height:40px;
 
 border-radius:12px;
+
 
 background:
 
@@ -432,9 +376,9 @@ linear-gradient(
 
 .fb{
 
-width:42px;
+width:40px;
 
-height:42px;
+height:40px;
 
 border-radius:50%;
 
@@ -442,7 +386,7 @@ background:#1877f2;
 
 color:white;
 
-font-size:32px;
+font-size:30px;
 
 display:flex;
 
@@ -456,8 +400,6 @@ font-weight:bold;
 
 
 
-
-
 </style>
 
 </head>
@@ -467,6 +409,7 @@ font-weight:bold;
 <body>
 
 
+
 <div class="banner">
 
 
@@ -474,25 +417,20 @@ font-weight:bold;
 <div class="left">
 
 
-<div class="main-title">
+<div class="title">
 
 LAW<br>
 
 AND<br>
 
-POL<span class="smile">
-
-O
-
-<i></i>
-
-</span>TICS
-
+POLITICS
 
 </div>
 
 
-<div class="line"></div>
+
+<div class="gold-line"></div>
+
 
 
 <div class="detail">
@@ -501,11 +439,14 @@ O
 
 <br>
 
+
 <strong>
 ห้องเรียนนิติ-รัฐศาสตร์
 </strong>
 
+
 <br>
+
 
 (LAW AND POLITICS CLASSROOM)
 
@@ -521,6 +462,7 @@ O
 <div class="right">
 
 
+
 <div class="logos">
 
 <div class="logo">SCHOOL</div>
@@ -533,16 +475,17 @@ O
 
 
 
+<div class="teacher-area">
 
-<div class="teachers">
+
+<img src="teacher1.png" class="teacher">
 
 
-<img class="teacher" src="teacher1.png">
-
-<img class="teacher" src="teacher2.png">
+<img src="teacher2.png" class="teacher">
 
 
 </div>
+
 
 
 
@@ -550,9 +493,7 @@ O
 <div class="social">
 
 
-<div class="small">
-คลิกเลย!
-</div>
+<small>คลิกเลย!</small>
 
 
 <a href="https://www.instagram.com/404lp.gen1?igsh=NnRleG04ZTV0aXcx">
@@ -564,18 +505,19 @@ O
 </a>
 
 
-<div class="small">
-คลิกเลย!
-</div>
+
+<small>คลิกเลย!</small>
 
 
 <a href="https://www.facebook.com/share/1BcdQeC7fJ/?mibextid=wwXIfr">
+
 
 <div class="fb">
 
 f
 
 </div>
+
 
 สังคมศึกษา ศ.ส.ว
 
@@ -590,9 +532,10 @@ f
 </div>
 
 
-
 </div>
 
 
+
 </body>
+
 </html>
